@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Sync Player</title>
+    <link href="../css/video_player.css" rel="stylesheet">
+    <link
+      href="https://vjs.zencdn.net/7.20.3/video-js.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div id="sessionInfo">
+        Session Key: <strong id="sessionKeyDisplay"></strong> | 
+        Role: <span id="userRole">Participant</span>
+    </div>
+
+    <div id="videoContainer">
+        <!-- disable controls for  -->
+        <video 
+            id="videoPlayer" 
+            class="video-js vjs-default-skin vjs-fluid"
+            data-setup='{}'
+            playsinline
+        >
+        </video>
+        <div class="controls">
+            <button id="playPauseBtn" disabled>Play/Pause</button>
+            <input type="range" id="seekBar" min="0" value="0" step="1" style="flex-grow: 1;" disabled>
+            <span class="timestamp">
+                <span id="currentTime">00:00</span> / 
+                <span id="duration">00:00</span>
+            </span>
+        </div>
+        <div id="statusMessage"></div>
+    </div>
+
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="../scripts/video_player.js"></script>
+</body>
+</html>
